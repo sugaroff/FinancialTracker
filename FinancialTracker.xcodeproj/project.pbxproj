@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84381A1A215BFF1B00826A45 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84381A19215BFF1B00826A45 /* NotificationCenter.framework */; };
+		84381A1D215BFF1B00826A45 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84381A1C215BFF1B00826A45 /* TodayViewController.swift */; };
+		84381A20215BFF1B00826A45 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84381A1E215BFF1B00826A45 /* MainInterface.storyboard */; };
+		84381A24215BFF1B00826A45 /* FinancialTrackerTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 84381A17215BFF1B00826A45 /* FinancialTrackerTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		84C5F3A52153AF6300BE9DA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5F3A42153AF6300BE9DA7 /* AppDelegate.swift */; };
 		84C5F3A72153AF6300BE9DA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5F3A62153AF6300BE9DA7 /* ViewController.swift */; };
 		84C5F3AA2153AF6300BE9DA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5F3A82153AF6300BE9DA7 /* Main.storyboard */; };
@@ -15,9 +19,17 @@
 		84C5F3B22153AF6700BE9DA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5F3B02153AF6700BE9DA7 /* LaunchScreen.storyboard */; };
 		84C5F3BD2153AF6700BE9DA7 /* FinancialTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5F3BC2153AF6700BE9DA7 /* FinancialTrackerTests.swift */; };
 		84C5F3C82153AF6700BE9DA7 /* FinancialTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5F3C72153AF6700BE9DA7 /* FinancialTrackerUITests.swift */; };
+		84C5F3D72154E3E900BE9DA7 /* RoundedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5F3D62154E3E900BE9DA7 /* RoundedUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		84381A22215BFF1B00826A45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84C5F3992153AF6300BE9DA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84381A16215BFF1B00826A45;
+			remoteInfo = FinancialTrackerTodayExtension;
+		};
 		84C5F3B92153AF6700BE9DA7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84C5F3992153AF6300BE9DA7 /* Project object */;
@@ -34,7 +46,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		84381A28215BFF1B00826A45 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				84381A24215BFF1B00826A45 /* FinancialTrackerTodayExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		84381A17215BFF1B00826A45 /* FinancialTrackerTodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FinancialTrackerTodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		84381A19215BFF1B00826A45 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		84381A1C215BFF1B00826A45 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		84381A1F215BFF1B00826A45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		84381A21215BFF1B00826A45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C5F3A12153AF6300BE9DA7 /* FinancialTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C5F3A42153AF6300BE9DA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C5F3A62153AF6300BE9DA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,9 +80,18 @@
 		84C5F3C32153AF6700BE9DA7 /* FinancialTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinancialTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C5F3C72153AF6700BE9DA7 /* FinancialTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialTrackerUITests.swift; sourceTree = "<group>"; };
 		84C5F3C92153AF6700BE9DA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C5F3D62154E3E900BE9DA7 /* RoundedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		84381A14215BFF1B00826A45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84381A1A215BFF1B00826A45 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84C5F39E2153AF6300BE9DA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -76,12 +116,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84381A18215BFF1B00826A45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84381A19215BFF1B00826A45 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84381A1B215BFF1B00826A45 /* FinancialTrackerTodayExtension */ = {
+			isa = PBXGroup;
+			children = (
+				84381A1C215BFF1B00826A45 /* TodayViewController.swift */,
+				84381A1E215BFF1B00826A45 /* MainInterface.storyboard */,
+				84381A21215BFF1B00826A45 /* Info.plist */,
+			);
+			path = FinancialTrackerTodayExtension;
+			sourceTree = "<group>";
+		};
 		84C5F3982153AF6300BE9DA7 = {
 			isa = PBXGroup;
 			children = (
 				84C5F3A32153AF6300BE9DA7 /* FinancialTracker */,
 				84C5F3BB2153AF6700BE9DA7 /* FinancialTrackerTests */,
 				84C5F3C62153AF6700BE9DA7 /* FinancialTrackerUITests */,
+				84381A1B215BFF1B00826A45 /* FinancialTrackerTodayExtension */,
+				84381A18215BFF1B00826A45 /* Frameworks */,
 				84C5F3A22153AF6300BE9DA7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +152,7 @@
 				84C5F3A12153AF6300BE9DA7 /* FinancialTracker.app */,
 				84C5F3B82153AF6700BE9DA7 /* FinancialTrackerTests.xctest */,
 				84C5F3C32153AF6700BE9DA7 /* FinancialTrackerUITests.xctest */,
+				84381A17215BFF1B00826A45 /* FinancialTrackerTodayExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +160,7 @@
 		84C5F3A32153AF6300BE9DA7 /* FinancialTracker */ = {
 			isa = PBXGroup;
 			children = (
+				84C5F3D52154E35500BE9DA7 /* Extensions */,
 				84C5F3A42153AF6300BE9DA7 /* AppDelegate.swift */,
 				84C5F3A62153AF6300BE9DA7 /* ViewController.swift */,
 				84C5F3A82153AF6300BE9DA7 /* Main.storyboard */,
@@ -128,9 +190,34 @@
 			path = FinancialTrackerUITests;
 			sourceTree = "<group>";
 		};
+		84C5F3D52154E35500BE9DA7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				84C5F3D62154E3E900BE9DA7 /* RoundedUIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		84381A16215BFF1B00826A45 /* FinancialTrackerTodayExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84381A27215BFF1B00826A45 /* Build configuration list for PBXNativeTarget "FinancialTrackerTodayExtension" */;
+			buildPhases = (
+				84381A13215BFF1B00826A45 /* Sources */,
+				84381A14215BFF1B00826A45 /* Frameworks */,
+				84381A15215BFF1B00826A45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FinancialTrackerTodayExtension;
+			productName = FinancialTrackerTodayExtension;
+			productReference = 84381A17215BFF1B00826A45 /* FinancialTrackerTodayExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		84C5F3A02153AF6300BE9DA7 /* FinancialTracker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84C5F3CC2153AF6700BE9DA7 /* Build configuration list for PBXNativeTarget "FinancialTracker" */;
@@ -138,10 +225,12 @@
 				84C5F39D2153AF6300BE9DA7 /* Sources */,
 				84C5F39E2153AF6300BE9DA7 /* Frameworks */,
 				84C5F39F2153AF6300BE9DA7 /* Resources */,
+				84381A28215BFF1B00826A45 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				84381A23215BFF1B00826A45 /* PBXTargetDependency */,
 			);
 			name = FinancialTracker;
 			productName = FinancialTracker;
@@ -194,6 +283,9 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Dmitry Sakharov";
 				TargetAttributes = {
+					84381A16215BFF1B00826A45 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					84C5F3A02153AF6300BE9DA7 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -223,11 +315,20 @@
 				84C5F3A02153AF6300BE9DA7 /* FinancialTracker */,
 				84C5F3B72153AF6700BE9DA7 /* FinancialTrackerTests */,
 				84C5F3C22153AF6700BE9DA7 /* FinancialTrackerUITests */,
+				84381A16215BFF1B00826A45 /* FinancialTrackerTodayExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		84381A15215BFF1B00826A45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84381A20215BFF1B00826A45 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84C5F39F2153AF6300BE9DA7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,10 +356,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		84381A13215BFF1B00826A45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84381A1D215BFF1B00826A45 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84C5F39D2153AF6300BE9DA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C5F3D72154E3E900BE9DA7 /* RoundedUIView.swift in Sources */,
 				84C5F3A72153AF6300BE9DA7 /* ViewController.swift in Sources */,
 				84C5F3AD2153AF6300BE9DA7 /* FinancialTracker.xcdatamodeld in Sources */,
 				84C5F3A52153AF6300BE9DA7 /* AppDelegate.swift in Sources */,
@@ -284,6 +394,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		84381A23215BFF1B00826A45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84381A16215BFF1B00826A45 /* FinancialTrackerTodayExtension */;
+			targetProxy = 84381A22215BFF1B00826A45 /* PBXContainerItemProxy */;
+		};
 		84C5F3BA2153AF6700BE9DA7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 84C5F3A02153AF6300BE9DA7 /* FinancialTracker */;
@@ -297,6 +412,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		84381A1E215BFF1B00826A45 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84381A1F215BFF1B00826A45 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		84C5F3A82153AF6300BE9DA7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -316,6 +439,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		84381A25215BFF1B00826A45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A2XMWCCZQ3;
+				INFOPLIST_FILE = FinancialTrackerTodayExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sugaroff.FinancialTracker.FinancialTrackerTodayExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84381A26215BFF1B00826A45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A2XMWCCZQ3;
+				INFOPLIST_FILE = FinancialTrackerTodayExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sugaroff.FinancialTracker.FinancialTrackerTodayExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		84C5F3CA2153AF6700BE9DA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -435,6 +596,7 @@
 		84C5F3CD2153AF6700BE9DA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A2XMWCCZQ3;
@@ -453,6 +615,7 @@
 		84C5F3CE2153AF6700BE9DA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A2XMWCCZQ3;
@@ -553,6 +716,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		84381A27215BFF1B00826A45 /* Build configuration list for PBXNativeTarget "FinancialTrackerTodayExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84381A25215BFF1B00826A45 /* Debug */,
+				84381A26215BFF1B00826A45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		84C5F39C2153AF6300BE9DA7 /* Build configuration list for PBXProject "FinancialTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
