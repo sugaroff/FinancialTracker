@@ -8,16 +8,19 @@
 
 import UIKit
 import NotificationCenter
+import CoreData
 
 class TodayViewController: UIViewController, NCWidgetProviding {
-        
+    
+    lazy var coreDataContext = CoreDataStack.shared.persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
         
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
     }
-        
+    
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
         
@@ -28,4 +31,43 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         completionHandler(NCUpdateResult.newData)
     }
     
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        if activeDisplayMode == .expanded {
+            preferredContentSize = CGSize(width: 0, height: 176)
+        } else {
+            preferredContentSize = maxSize
+        }
+    }
+    
+    @IBAction func categorySelected(_ sender: UIButton) {
+        // First we check if the view controller managed object context is not nil.
+        //
+        // But since we are not cleaning this instance, on our case,
+        // the guard will always return a valid context.
+        //
+        // But despite that, let's have the correct way to use a optional variable.
+        
+        
+        
+        // Using the Managed Object Context, lets create a new entry into entity "Task".
+        let object = NSEntityDescription.insertNewObject(forEntityName: "BudgetItem", into: coreDataContext) as? BudgetItem
+        
+        // And update his attributes.
+        // Since we didn't create a user interface to input text,
+        // lets use the current date description as a name, and by default we set
+        // the attribute "completed" to false.
+        object?.desc = "Food"
+        object?.amount = 100
+        object?.date = Date()
+        
+        do {
+            // Then we try to persist the new entry.
+            // And if everything went successfull the fetched results controller
+            // will react and from the delegate methods it will call the reload
+            // of the table view.
+            try coreDataContext.save()
+        } catch {
+            print(error)
+        }
+    }
 }

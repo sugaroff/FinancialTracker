@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8437F5052162B3D30005D4D8 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437F5032162B3D30005D4D8 /* CoreDataStack.swift */; };
+		8437F5072162B3F40005D4D8 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437F5032162B3D30005D4D8 /* CoreDataStack.swift */; };
+		8437F5082162B5130005D4D8 /* FinancialTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84C5F3AB2153AF6300BE9DA7 /* FinancialTracker.xcdatamodeld */; };
 		84381A1A215BFF1B00826A45 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84381A19215BFF1B00826A45 /* NotificationCenter.framework */; };
 		84381A1D215BFF1B00826A45 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84381A1C215BFF1B00826A45 /* TodayViewController.swift */; };
 		84381A20215BFF1B00826A45 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84381A1E215BFF1B00826A45 /* MainInterface.storyboard */; };
@@ -61,6 +64,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8437F5032162B3D30005D4D8 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		84381A17215BFF1B00826A45 /* FinancialTrackerTodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FinancialTrackerTodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		84381A19215BFF1B00826A45 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		84381A1C215BFF1B00826A45 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				84381A1C215BFF1B00826A45 /* TodayViewController.swift */,
+				8437F5032162B3D30005D4D8 /* CoreDataStack.swift */,
 				84381A1E215BFF1B00826A45 /* MainInterface.storyboard */,
 				84381A21215BFF1B00826A45 /* Info.plist */,
 			);
@@ -361,6 +366,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				84381A1D215BFF1B00826A45 /* TodayViewController.swift in Sources */,
+				8437F5082162B5130005D4D8 /* FinancialTracker.xcdatamodeld in Sources */,
+				8437F5052162B3D30005D4D8 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8437F5072162B3F40005D4D8 /* CoreDataStack.swift in Sources */,
 				84C5F3D72154E3E900BE9DA7 /* RoundedUIView.swift in Sources */,
 				84C5F3A72153AF6300BE9DA7 /* ViewController.swift in Sources */,
 				84C5F3AD2153AF6300BE9DA7 /* FinancialTracker.xcdatamodeld in Sources */,
