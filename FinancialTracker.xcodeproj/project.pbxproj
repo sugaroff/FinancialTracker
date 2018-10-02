@@ -65,6 +65,8 @@
 
 /* Begin PBXFileReference section */
 		8437F5032162B3D30005D4D8 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		8437F50A21637DD80005D4D8 /* FinancialTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinancialTracker.entitlements; sourceTree = "<group>"; };
+		8437F50B21637E730005D4D8 /* FinancialTrackerTodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinancialTrackerTodayExtension.entitlements; sourceTree = "<group>"; };
 		84381A17215BFF1B00826A45 /* FinancialTrackerTodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FinancialTrackerTodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		84381A19215BFF1B00826A45 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		84381A1C215BFF1B00826A45 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		84381A1B215BFF1B00826A45 /* FinancialTrackerTodayExtension */ = {
 			isa = PBXGroup;
 			children = (
+				8437F50B21637E730005D4D8 /* FinancialTrackerTodayExtension.entitlements */,
 				84381A1C215BFF1B00826A45 /* TodayViewController.swift */,
 				8437F5032162B3D30005D4D8 /* CoreDataStack.swift */,
 				84381A1E215BFF1B00826A45 /* MainInterface.storyboard */,
@@ -165,6 +168,7 @@
 		84C5F3A32153AF6300BE9DA7 /* FinancialTracker */ = {
 			isa = PBXGroup;
 			children = (
+				8437F50A21637DD80005D4D8 /* FinancialTracker.entitlements */,
 				84C5F3D52154E35500BE9DA7 /* Extensions */,
 				84C5F3A42153AF6300BE9DA7 /* AppDelegate.swift */,
 				84C5F3A62153AF6300BE9DA7 /* ViewController.swift */,
@@ -290,9 +294,19 @@
 				TargetAttributes = {
 					84381A16215BFF1B00826A45 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					84C5F3A02153AF6300BE9DA7 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					84C5F3B72153AF6700BE9DA7 = {
 						CreatedOnToolsVersion = 10.0;
@@ -450,6 +464,7 @@
 		84381A25215BFF1B00826A45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FinancialTrackerTodayExtension/FinancialTrackerTodayExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A2XMWCCZQ3;
 				INFOPLIST_FILE = FinancialTrackerTodayExtension/Info.plist;
@@ -469,6 +484,7 @@
 		84381A26215BFF1B00826A45 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FinancialTrackerTodayExtension/FinancialTrackerTodayExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A2XMWCCZQ3;
 				INFOPLIST_FILE = FinancialTrackerTodayExtension/Info.plist;
@@ -606,6 +622,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FinancialTracker/FinancialTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A2XMWCCZQ3;
 				INFOPLIST_FILE = FinancialTracker/Info.plist;
@@ -625,6 +642,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FinancialTracker/FinancialTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A2XMWCCZQ3;
 				INFOPLIST_FILE = FinancialTracker/Info.plist;

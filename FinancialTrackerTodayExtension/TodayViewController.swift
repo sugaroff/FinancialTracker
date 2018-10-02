@@ -29,6 +29,20 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // If there's an update, use NCUpdateResult.NewData
         
         completionHandler(NCUpdateResult.newData)
+        
+        let fetchRequest: NSFetchRequest<BudgetItem> = BudgetItem.fetchRequest()
+        let result: [BudgetItem]
+        do {
+            result = try coreDataContext.fetch(fetchRequest)
+            print("WIDGET FETCH")
+            
+            for item in result {
+                print("Desc: \(item.desc!)  Am: \(item.amount)  Date: \(item.date!.description)")
+            }
+            
+        } catch let error as NSError {
+            print(error)
+        }
     }
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
