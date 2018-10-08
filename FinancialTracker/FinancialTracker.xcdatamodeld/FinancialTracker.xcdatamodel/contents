@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="BudgetItem" representedClassName="BudgetItem" syncable="YES" codeGenerationType="class">
-        <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="amount" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="category" attributeType="String" syncable="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Report" representedClassName="Report" syncable="YES" codeGenerationType="class">
+        <attribute name="categories" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
         <relationship name="costs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BudgetItem" syncable="YES"/>
     </entity>
     <elements>
-        <element name="BudgetItem" positionX="-63" positionY="-27" width="128" height="90"/>
-        <element name="Report" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="BudgetItem" positionX="-63" positionY="-27" width="128" height="105"/>
+        <element name="Report" positionX="-63" positionY="-18" width="128" height="75"/>
     </elements>
 </model>

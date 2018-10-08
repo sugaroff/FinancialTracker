@@ -14,6 +14,10 @@
 		84381A1D215BFF1B00826A45 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84381A1C215BFF1B00826A45 /* TodayViewController.swift */; };
 		84381A20215BFF1B00826A45 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84381A1E215BFF1B00826A45 /* MainInterface.storyboard */; };
 		84381A24215BFF1B00826A45 /* FinancialTrackerTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 84381A17215BFF1B00826A45 /* FinancialTrackerTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		84A8B0E1216B25C500F38A1A /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8B0E0216B25C500F38A1A /* DataManagerProtocol.swift */; };
+		84A8B0E2216B25C500F38A1A /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8B0E0216B25C500F38A1A /* DataManagerProtocol.swift */; };
+		84A8B0E4216B282000F38A1A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8B0E3216B282000F38A1A /* DataManager.swift */; };
+		84A8B0E5216B282000F38A1A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8B0E3216B282000F38A1A /* DataManager.swift */; };
 		84C5F3A52153AF6300BE9DA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5F3A42153AF6300BE9DA7 /* AppDelegate.swift */; };
 		84C5F3A72153AF6300BE9DA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5F3A62153AF6300BE9DA7 /* ViewController.swift */; };
 		84C5F3AA2153AF6300BE9DA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5F3A82153AF6300BE9DA7 /* Main.storyboard */; };
@@ -72,6 +76,8 @@
 		84381A1C215BFF1B00826A45 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		84381A1F215BFF1B00826A45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		84381A21215BFF1B00826A45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84A8B0E0216B25C500F38A1A /* DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerProtocol.swift; sourceTree = "<group>"; };
+		84A8B0E3216B282000F38A1A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		84C5F3A12153AF6300BE9DA7 /* FinancialTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C5F3A42153AF6300BE9DA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C5F3A62153AF6300BE9DA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +128,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8437F50C2163A8180005D4D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8437F5032162B3D30005D4D8 /* CoreDataStack.swift */,
+				84A8B0E0216B25C500F38A1A /* DataManagerProtocol.swift */,
+				84A8B0E3216B282000F38A1A /* DataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		84381A18215BFF1B00826A45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,7 +151,6 @@
 			children = (
 				8437F50B21637E730005D4D8 /* FinancialTrackerTodayExtension.entitlements */,
 				84381A1C215BFF1B00826A45 /* TodayViewController.swift */,
-				8437F5032162B3D30005D4D8 /* CoreDataStack.swift */,
 				84381A1E215BFF1B00826A45 /* MainInterface.storyboard */,
 				84381A21215BFF1B00826A45 /* Info.plist */,
 			);
@@ -145,6 +160,7 @@
 		84C5F3982153AF6300BE9DA7 = {
 			isa = PBXGroup;
 			children = (
+				8437F50C2163A8180005D4D8 /* Model */,
 				84C5F3A32153AF6300BE9DA7 /* FinancialTracker */,
 				84C5F3BB2153AF6700BE9DA7 /* FinancialTrackerTests */,
 				84C5F3C62153AF6700BE9DA7 /* FinancialTrackerUITests */,
@@ -380,8 +396,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				84381A1D215BFF1B00826A45 /* TodayViewController.swift in Sources */,
+				84A8B0E5216B282000F38A1A /* DataManager.swift in Sources */,
 				8437F5082162B5130005D4D8 /* FinancialTracker.xcdatamodeld in Sources */,
 				8437F5052162B3D30005D4D8 /* CoreDataStack.swift in Sources */,
+				84A8B0E2216B25C500F38A1A /* DataManagerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,8 +410,10 @@
 				8437F5072162B3F40005D4D8 /* CoreDataStack.swift in Sources */,
 				84C5F3D72154E3E900BE9DA7 /* RoundedUIView.swift in Sources */,
 				84C5F3A72153AF6300BE9DA7 /* ViewController.swift in Sources */,
+				84A8B0E4216B282000F38A1A /* DataManager.swift in Sources */,
 				84C5F3AD2153AF6300BE9DA7 /* FinancialTracker.xcdatamodeld in Sources */,
 				84C5F3A52153AF6300BE9DA7 /* AppDelegate.swift in Sources */,
+				84A8B0E1216B25C500F38A1A /* DataManagerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

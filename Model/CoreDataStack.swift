@@ -28,6 +28,7 @@ class CoreDataStack {
         let container = NSPersistentContainer(name: storageName)
         let storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupId)!.appendingPathComponent("\(storageName).sqlite")
         container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: storeURL)]
+        
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
