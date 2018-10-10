@@ -11,7 +11,12 @@ import CoreData
 
 class DataManager : DataManagerProtocol {
     
+    static var shared: DataManagerProtocol = DataManager()
+    
     lazy var coreDataContext = CoreDataStack.shared.persistentContainer.viewContext
+    
+    private init() {
+    }
     
     func getRecentCosts() throws -> [BudgetItem] {
         let fetchRequest: NSFetchRequest<BudgetItem> = BudgetItem.fetchRequest()

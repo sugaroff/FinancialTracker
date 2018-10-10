@@ -9,6 +9,8 @@
 import Foundation
 
 protocol DataManagerProtocol {
+    static var shared: DataManagerProtocol { get }
+    
     func getRecentCosts() throws -> [BudgetItem]
     func insertNewCost(_ cost: BudgetItem)
 }
