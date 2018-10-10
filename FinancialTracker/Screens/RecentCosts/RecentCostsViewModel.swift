@@ -25,26 +25,43 @@ class RecentCostsViewModel {
         return costVMs.count;
     }
     
-    func getCostForIndexPath(_ indexPath: IndexPath) -> CostViewModel {
+    func getCostVMForIndexPath(_ indexPath: IndexPath) -> CostViewModel {
         return costVMs[indexPath.row]
-    }
-    
-    func addNewCost(_ amount: Float, for category: String, description: String? = nil) {
-        
     }
 }
 
+// MARK: Events
 
 extension RecentCostsViewModel {
     
-    private func fetchCosts() -> [CostViewModel] {
-        let costModels = dataManager.getRecentCosts()
-        
-        return [CostViewModel]()
+    func addNewCost(amount: Float, category: String, description: String? = nil) {
+        dataManager.insertNewCost(amount: amount, category: category, date: Date(), description: description)
+    }
+}
+
+// MARK: Fetch data
+
+extension RecentCostsViewModel {
+    
+    func fetch(complete: @escaping (_ success: Bool) -> Void) {
+        do {
+            let costModels = try dataManager.getRecentCosts()
+            
+            costVMs.removeAll()
+            for costModel in costModels {
+                let costvm = process(costModel: costModel)
+                costVMs.append(costvm)
+            }
+            
+            complete(true)
+        } catch {
+            complete(false)
+            print(error)
+        }
     }
     
-    private func process(cost:BudgetItem) -> CostViewModel {
-        let costVM = CostViewModel(category: cost.category!, amount: cost.amount, date: cost.date!, description: cost.desc)
+    private func process(costModel:BudgetItem) -> CostViewModel {
+        let costVM = CostViewModel(category: costModel.category!, amount: costModel.amount, date: costModel.date!, description: costModel.desc)
         
         return costVM
     }

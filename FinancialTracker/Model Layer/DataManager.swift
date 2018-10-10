@@ -22,18 +22,17 @@ class DataManager : DataManagerProtocol {
         let fetchRequest: NSFetchRequest<BudgetItem> = BudgetItem.fetchRequest()
         
         let result: [BudgetItem]
-        
         result = try coreDataContext.fetch(fetchRequest)
-        print("APP FETCH")
         
+        print("Fetched costs:")
         for item in result {
-            print("Desc: \(item.desc!)  Am: \(item.amount)  Date: \(item.date!.description)")
+            print("Desc: \(item.category!)  Am: \(item.amount)  Date: \(item.date!.description)")
         }
         
         return result
     }
     
-    func insertNewCost(_ cost: BudgetItem) {
+    func insertNewCost(amount: Float, category: String, date: Date, description: String?) {
         /* // Using the Managed Object Context, lets create a new entry into entity "Task".
         let object = NSEntityDescription.insertNewObject(forEntityName: "BudgetItem", into: coreDataContext) as? BudgetItem
         
@@ -45,7 +44,11 @@ class DataManager : DataManagerProtocol {
         object?.amount = 100
         object?.date = Date() */
         
-        coreDataContext.insert(cost)
+        let cost = BudgetItem(context: coreDataContext)
+        cost.amount = amount
+        cost.category = category
+        cost.date = date
+        cost.desc = description
         
         do {
             // Then we try to persist the new entry.

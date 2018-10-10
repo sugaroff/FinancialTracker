@@ -10,7 +10,7 @@ import UIKit
 
 class ResentCostsTableViewController: UITableViewController {
 
-    lazy var viewModel: RecentCostsViewModel = RecentCostsViewModel()
+    var viewModel: RecentCostsViewModel = RecentCostsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +20,17 @@ class ResentCostsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        fetch()
     }
 
-    // MARK: - Table view data source
+    func fetch() {
+        viewModel.fetch { [unowned self] (isSuccess) in
+            self.tableView.reloadData()
+        }
+    }
+    
+    // MARK: Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
@@ -35,10 +43,10 @@ class ResentCostsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UIConstants.BudgetItemCellIdentifier, for: indexPath) as! BudgetItemTableViewCell
 
-        let cellVM = viewModel.getCostForIndexPath(indexPath)
+        let cellVM = viewModel.getCostVMForIndexPath(indexPath)
         
         cell.amountLabel.text = String(cellVM.amount)
-        cell.amountLabel.text = cellVM.category
+        cell.categoryLabel.text = cellVM.category
 
         return cell
     }
@@ -79,7 +87,7 @@ class ResentCostsTableViewController: UITableViewController {
     */
 
     /*
-    // MARK: - Navigation
+    // MARK: Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -87,5 +95,16 @@ class ResentCostsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+// MARK: - Events
+
+extension ResentCostsTableViewController {
+    @IBAction func addNewCostAction(sender: Any) {
+        viewModel.addNewCost(
+            amount: [100, 200, 50].randomElement()!,
+            category:  ["Food", "Transport", "Other"].randomElement()!)
+        
+        fetch()
+    }
 }

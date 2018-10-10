@@ -12,5 +12,5 @@ protocol DataManagerProtocol {
     static var shared: DataManagerProtocol { get }
     
     func getRecentCosts() throws -> [BudgetItem]
-    func insertNewCost(_ cost: BudgetItem)
+    func insertNewCost(amount: Float, category: String, date: Date, description: String?)
 }
