@@ -41,7 +41,7 @@ class ResentCostsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: UIConstants.BudgetItemCellIdentifier, for: indexPath) as! BudgetItemTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: BudgetItemTableViewCell.reuseIdentifier, for: indexPath) as! BudgetItemTableViewCell
 
         let cellVM = viewModel.getCostVMForIndexPath(indexPath)
         

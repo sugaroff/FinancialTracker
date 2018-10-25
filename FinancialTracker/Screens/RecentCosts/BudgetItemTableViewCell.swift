@@ -10,6 +10,8 @@ import UIKit
 
 class BudgetItemTableViewCell: UITableViewCell {
 
+    static let reuseIdentifier = "BudgetItem"
+    
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     

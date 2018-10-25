@@ -6,12 +6,17 @@
         <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Report" representedClassName="Report" syncable="YES" codeGenerationType="class">
+    <entity name="Journal" representedClassName="Journal" syncable="YES" codeGenerationType="class">
         <attribute name="categories" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
         <relationship name="costs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BudgetItem" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="journal" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <relationship name="journal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Journal" inverseName="user" inverseEntity="Journal" syncable="YES"/>
     </entity>
     <elements>
         <element name="BudgetItem" positionX="-63" positionY="-27" width="128" height="105"/>
-        <element name="Report" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Journal" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="User" positionX="-54" positionY="0" width="128" height="60"/>
     </elements>
 </model>

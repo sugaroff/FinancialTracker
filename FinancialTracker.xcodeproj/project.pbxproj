@@ -18,6 +18,7 @@
 		84801636216BDAD60044F709 /* RecentCostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84801635216BDAD60044F709 /* RecentCostsViewModel.swift */; };
 		84801638216CCB090044F709 /* ResentCostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84801637216CCB090044F709 /* ResentCostsTableViewController.swift */; };
 		8480163A216D26FA0044F709 /* UIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84801639216D26FA0044F709 /* UIConstant.swift */; };
+		8491F146216F996F003B85FE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491F145216F996F003B85FE /* ProfileViewController.swift */; };
 		84A8B0E1216B25C500F38A1A /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8B0E0216B25C500F38A1A /* DataManagerProtocol.swift */; };
 		84A8B0E2216B25C500F38A1A /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8B0E0216B25C500F38A1A /* DataManagerProtocol.swift */; };
 		84A8B0E4216B282000F38A1A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8B0E3216B282000F38A1A /* DataManager.swift */; };
@@ -83,6 +84,7 @@
 		84801635216BDAD60044F709 /* RecentCostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCostsViewModel.swift; sourceTree = "<group>"; };
 		84801637216CCB090044F709 /* ResentCostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResentCostsTableViewController.swift; sourceTree = "<group>"; };
 		84801639216D26FA0044F709 /* UIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstant.swift; sourceTree = "<group>"; };
+		8491F145216F996F003B85FE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		84A8B0E0216B25C500F38A1A /* DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerProtocol.swift; sourceTree = "<group>"; };
 		84A8B0E3216B282000F38A1A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		84C5F3A12153AF6300BE9DA7 /* FinancialTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,14 +136,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8437F50C2163A8180005D4D8 /* Model Layer */ = {
+		8437F50C2163A8180005D4D8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				8437F5032162B3D30005D4D8 /* CoreDataStack.swift */,
 				84A8B0E0216B25C500F38A1A /* DataManagerProtocol.swift */,
 				84A8B0E3216B282000F38A1A /* DataManager.swift */,
 			);
-			path = "Model Layer";
+			path = Services;
 			sourceTree = "<group>";
 		};
 		84381A18215BFF1B00826A45 /* Frameworks */ = {
@@ -166,6 +168,8 @@
 		84801631216BB8220044F709 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				84C5F3A82153AF6300BE9DA7 /* Main.storyboard */,
+				8491F144216F992B003B85FE /* Profile */,
 				84801632216BB84F0044F709 /* RecentCosts */,
 				84801639216D26FA0044F709 /* UIConstant.swift */,
 			);
@@ -180,6 +184,14 @@
 				84801637216CCB090044F709 /* ResentCostsTableViewController.swift */,
 			);
 			path = RecentCosts;
+			sourceTree = "<group>";
+		};
+		8491F144216F992B003B85FE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8491F145216F996F003B85FE /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		84C5F3982153AF6300BE9DA7 = {
@@ -209,10 +221,9 @@
 			isa = PBXGroup;
 			children = (
 				84C5F3D52154E35500BE9DA7 /* Extensions */,
-				8437F50C2163A8180005D4D8 /* Model Layer */,
+				8437F50C2163A8180005D4D8 /* Services */,
 				84801631216BB8220044F709 /* Screens */,
 				84C5F3A42153AF6300BE9DA7 /* AppDelegate.swift */,
-				84C5F3A82153AF6300BE9DA7 /* Main.storyboard */,
 				84C5F3B02153AF6700BE9DA7 /* LaunchScreen.storyboard */,
 				84C5F3B32153AF6700BE9DA7 /* Info.plist */,
 				84C5F3AB2153AF6300BE9DA7 /* FinancialTracker.xcdatamodeld */,
@@ -438,6 +449,7 @@
 				84A8B0E4216B282000F38A1A /* DataManager.swift in Sources */,
 				84C5F3AD2153AF6300BE9DA7 /* FinancialTracker.xcdatamodeld in Sources */,
 				84C5F3A52153AF6300BE9DA7 /* AppDelegate.swift in Sources */,
+				8491F146216F996F003B85FE /* ProfileViewController.swift in Sources */,
 				84801636216BDAD60044F709 /* RecentCostsViewModel.swift in Sources */,
 				8480163A216D26FA0044F709 /* UIConstant.swift in Sources */,
 				84801638216CCB090044F709 /* ResentCostsTableViewController.swift in Sources */,
