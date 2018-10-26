@@ -31,6 +31,7 @@
 		84C5F3BD2153AF6700BE9DA7 /* FinancialTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5F3BC2153AF6700BE9DA7 /* FinancialTrackerTests.swift */; };
 		84C5F3C82153AF6700BE9DA7 /* FinancialTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5F3C72153AF6700BE9DA7 /* FinancialTrackerUITests.swift */; };
 		84C5F3D72154E3E900BE9DA7 /* RoundedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5F3D62154E3E900BE9DA7 /* RoundedUIView.swift */; };
+		EC9CCCF021834EB700B96574 /* RecentCostsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9CCCEF21834EB700B96574 /* RecentCostsInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		84C5F3C72153AF6700BE9DA7 /* FinancialTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialTrackerUITests.swift; sourceTree = "<group>"; };
 		84C5F3C92153AF6700BE9DA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C5F3D62154E3E900BE9DA7 /* RoundedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIView.swift; sourceTree = "<group>"; };
+		EC9CCCEF21834EB700B96574 /* RecentCostsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCostsInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,8 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				84C5F3A82153AF6300BE9DA7 /* Main.storyboard */,
-				8491F144216F992B003B85FE /* Profile */,
 				84801632216BB84F0044F709 /* RecentCosts */,
+				8491F144216F992B003B85FE /* Profile */,
 				84801639216D26FA0044F709 /* UIConstant.swift */,
 			);
 			path = Screens;
@@ -180,8 +182,9 @@
 			isa = PBXGroup;
 			children = (
 				84801633216BD6940044F709 /* BudgetItemTableViewCell.swift */,
-				84801635216BDAD60044F709 /* RecentCostsViewModel.swift */,
 				84801637216CCB090044F709 /* ResentCostsTableViewController.swift */,
+				84801635216BDAD60044F709 /* RecentCostsViewModel.swift */,
+				EC9CCCEF21834EB700B96574 /* RecentCostsInteractor.swift */,
 			);
 			path = RecentCosts;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				84A8B0E4216B282000F38A1A /* DataManager.swift in Sources */,
 				84C5F3AD2153AF6300BE9DA7 /* FinancialTracker.xcdatamodeld in Sources */,
 				84C5F3A52153AF6300BE9DA7 /* AppDelegate.swift in Sources */,
+				EC9CCCF021834EB700B96574 /* RecentCostsInteractor.swift in Sources */,
 				8491F146216F996F003B85FE /* ProfileViewController.swift in Sources */,
 				84801636216BDAD60044F709 /* RecentCostsViewModel.swift in Sources */,
 				8480163A216D26FA0044F709 /* UIConstant.swift in Sources */,
@@ -528,6 +532,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A2XMWCCZQ3;
 				INFOPLIST_FILE = FinancialTrackerTodayExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -548,6 +553,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A2XMWCCZQ3;
 				INFOPLIST_FILE = FinancialTrackerTodayExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -686,6 +692,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A2XMWCCZQ3;
 				INFOPLIST_FILE = FinancialTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -706,6 +713,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A2XMWCCZQ3;
 				INFOPLIST_FILE = FinancialTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

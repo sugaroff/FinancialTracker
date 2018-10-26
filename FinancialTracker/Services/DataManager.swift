@@ -11,12 +11,17 @@ import CoreData
 
 class DataManager : NSObject, DataManagerProtocol {
     
+    var willChangeContent: (() -> Void)?
+    var didChangeContent: (() -> Void)?
+    
+    
     static var shared: DataManagerProtocol = DataManager()
     
     lazy var coreDataContext = CoreDataStack.shared.persistentContainer.viewContext
     
     lazy var costsFRC: NSFetchedResultsController<BudgetItem> = {
         let fetchRequest: NSFetchRequest<BudgetItem> = BudgetItem.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         
         let frc = NSFetchedResultsController<BudgetItem>(
             fetchRequest: fetchRequest,

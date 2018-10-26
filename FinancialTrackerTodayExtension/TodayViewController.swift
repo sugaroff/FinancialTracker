@@ -37,7 +37,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             print("WIDGET FETCH")
             
             for item in result {
-                print("Desc: \(item.desc!)  Am: \(item.amount)  Date: \(item.date!.description)")
+                print("Desc: \(item.category!)  Am: \(item.amount)  Date: \(item.date!.description)")
             }
             
         } catch let error as NSError {
@@ -70,8 +70,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // Since we didn't create a user interface to input text,
         // lets use the current date description as a name, and by default we set
         // the attribute "completed" to false.
-        object?.desc = "Food"
-        object?.amount = 100
+        object?.category = "Food"
+        object?.amount = 20
         object?.date = Date()
         
         do {
