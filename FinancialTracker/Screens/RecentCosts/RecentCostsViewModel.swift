@@ -10,7 +10,7 @@ import Foundation
 
 class RecentCostsViewModel {
     
-    private let dataManager: DataManagerProtocol
+    private let costsProvider: DataProviderProtocol<BudgetItemModel>
     private var costVMs: [CostViewModel] = [CostViewModel]()
     
     init(dataManager: DataManagerProtocol = DataManager.shared) {
