@@ -8,6 +8,6 @@
 
 import Foundation
 
-class RecentCostsInteractor {
-    func getCosts() -> 
-}
+//class RecentCostsInteractor {
+//    func getCosts() -> 
+//}

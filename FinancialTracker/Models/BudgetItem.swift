@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BudgetItemModel {
+struct BudgetItem {
     var amount: Float
     let date: Date
     let category: String

@@ -9,5 +9,5 @@
 import Foundation
 
 struct UIConstants {
-    static let BudgetItemCellIdentifier = "BudgetItem"
+    static let BudgetItemCellIdentifier = "BudgetItemMO"
 }

@@ -9,22 +9,30 @@
 import Foundation
 
 
-protocol DataProviderProtocol {
+class DataProvider<ItemType> {
     
-    associatedtype ItemType
+    func getData(response: @escaping (Response<[ItemType]>) -> Void) {
+        fatalError("\(#function) doesn't implemented")
+    }
     
-    func getData(response: @escaping ([ItemType], Error) -> Void)
-    func insertNew(item: ItemType)
+    func insertNew(item: ItemType) {
+        fatalError("\(#function) doesn't implemented")
+    }
     
-    var willChangeData: (() -> Void)? { get set }
-    var didChangeData: (() -> Void)? { get set }
-    var didChangeItem: ((_ changedItem: ItemType, _ changeType: ChangeType, _ oldIndex: IndexPath?, _ newIndex: IndexPath?) -> Void)? { get set }
-}
-
-
-enum ChangeType {
-    case insert
-    case changed
-    case move
-    case delete
+    var willChangeData: (() -> Void)?
+    var didChangeData: (() -> Void)?
+    var didChangeItem: ((_ changedItem: ItemType, _ changeType: ItemChangeType, _ oldIndex: IndexPath?, _ newIndex: IndexPath?) -> Void)?
+    
+    
+    enum Response<DataType> {
+        case success(DataType)
+        case error()
+    }
+    
+    enum ItemChangeType {
+        case insert
+        case changed
+        case move
+        case delete
+    }
 }

@@ -30,8 +30,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         completionHandler(NCUpdateResult.newData)
         
-        let fetchRequest: NSFetchRequest<BudgetItem> = BudgetItem.fetchRequest()
-        let result: [BudgetItem]
+        let fetchRequest: NSFetchRequest<BudgetItemMO> = BudgetItemMO.fetchRequest()
+        let result: [BudgetItemMO]
         do {
             result = try coreDataContext.fetch(fetchRequest)
             print("WIDGET FETCH")
@@ -64,7 +64,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         
         // Using the Managed Object Context, lets create a new entry into entity "Task".
-        let object = NSEntityDescription.insertNewObject(forEntityName: "BudgetItem", into: coreDataContext) as? BudgetItem
+        let object = NSEntityDescription.insertNewObject(forEntityName: "BudgetItemMO", into: coreDataContext) as? BudgetItemMO
         
         // And update his attributes.
         // Since we didn't create a user interface to input text,

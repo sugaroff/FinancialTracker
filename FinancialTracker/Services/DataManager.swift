@@ -19,11 +19,11 @@ class DataManager : NSObject, DataManagerProtocol {
     
     lazy var coreDataContext = CoreDataStack.shared.persistentContainer.viewContext
     
-    lazy var costsFRC: NSFetchedResultsController<BudgetItem> = {
-        let fetchRequest: NSFetchRequest<BudgetItem> = BudgetItem.fetchRequest()
+    lazy var costsFRC: NSFetchedResultsController<BudgetItemMO> = {
+        let fetchRequest: NSFetchRequest<BudgetItemMO> = BudgetItemMO.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         
-        let frc = NSFetchedResultsController<BudgetItem>(
+        let frc = NSFetchedResultsController<BudgetItemMO>(
             fetchRequest: fetchRequest,
             managedObjectContext: coreDataContext,
             sectionNameKeyPath: nil,
@@ -37,7 +37,7 @@ class DataManager : NSObject, DataManagerProtocol {
     }
     
     
-    func getRecentCosts() throws -> [BudgetItem] {
+    func getRecentCosts() throws -> [BudgetItemMO] {
         try costsFRC.performFetch()
         let result = costsFRC.fetchedObjects!
         
@@ -50,7 +50,7 @@ class DataManager : NSObject, DataManagerProtocol {
     }
     
     func insertNewCost(amount: Float, category: String, date: Date, description: String?) {
-        let cost = BudgetItem(context: coreDataContext)
+        let cost = BudgetItemMO(context: coreDataContext)
         cost.amount = amount
         cost.category = category
         cost.date = date

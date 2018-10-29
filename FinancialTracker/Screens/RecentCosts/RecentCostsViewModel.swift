@@ -10,11 +10,11 @@ import Foundation
 
 class RecentCostsViewModel {
     
-    private let costsProvider: DataProviderProtocol<BudgetItemModel>
+    private let costsProvider: DataProvider<BudgetItemMO>
     private var costVMs: [CostViewModel] = [CostViewModel]()
     
-    init(dataManager: DataManagerProtocol = DataManager.shared) {
-        self.dataManager = dataManager
+    init(costsProvider: DataProvider<BudgetItemMO>) {
+        self.costsProvider = costsProvider
     }
     
     func numberOfSections() -> Int {
@@ -45,7 +45,7 @@ extension RecentCostsViewModel {
     
     func fetch(complete: @escaping (_ success: Bool) -> Void) {
         do {
-            let costModels = try dataManager.getRecentCosts()
+            let costModels = try costsProvider.getRecentCosts()
             
             costVMs.removeAll()
             for costModel in costModels {
@@ -60,7 +60,7 @@ extension RecentCostsViewModel {
         }
     }
     
-    private func process(costModel:BudgetItem) -> CostViewModel {
+    private func process(costModel:BudgetItemMO) -> CostViewModel {
         let costVM = CostViewModel(category: costModel.category!, amount: costModel.amount, date: costModel.date!, description: costModel.desc)
         
         return costVM

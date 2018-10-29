@@ -15,7 +15,7 @@ protocol DataManagerProtocol {
     var didChangeContent: (() -> Void)? { get set }
 //    var didInsertObj
     
-    func getRecentCosts() throws -> [BudgetItem]
+    func getRecentCosts() throws -> [BudgetItemMO]
     func insertNewCost(amount: Float, category: String, date: Date, description: String?)
     
     
