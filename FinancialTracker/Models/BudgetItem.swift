@@ -9,8 +9,30 @@
 import Foundation
 
 struct BudgetItem {
+    
     var amount: Float
     let date: Date
     let category: String
-    var description: String?
+    var comment: String?
+    
+    
+    init(amount: Float, date: Date, category: String, description: String?) {
+        self.amount = amount
+        self.date = date
+        self.category = category
+        self.comment = description
+    }
+    
+    init(amount: Float, category: String) {
+        self.init(amount: amount, date: Date(), category: category, description: nil)
+    }
+}
+
+
+
+extension BudgetItem : CustomStringConvertible {
+    
+    var description: String {
+        return "Cat: \(category)  Am: \(amount)  Date: \(date.description)"
+    }
 }

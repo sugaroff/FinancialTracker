@@ -10,11 +10,11 @@ import Foundation
 
 class RecentCostsViewModel {
     
-    private let costsProvider: DataProvider<BudgetItemMO>
+    private let interactor: RecentCostsInteractor
     private var costVMs: [CostViewModel] = [CostViewModel]()
     
-    init(costsProvider: DataProvider<BudgetItemMO>) {
-        self.costsProvider = costsProvider
+    init(interactor: RecentCostsInteractor = RecentCostsInteractor()) {
+        self.interactor = interactor
     }
     
     func numberOfSections() -> Int {
@@ -30,12 +30,14 @@ class RecentCostsViewModel {
     }
 }
 
+
 // MARK: Events
 
 extension RecentCostsViewModel {
     
     func addNewCost(amount: Float, category: String, description: String? = nil) {
-        dataManager.insertNewCost(amount: amount, category: category, date: Date(), description: description)
+        let newCost = BudgetItem(amount: amount, category: category)
+        interactor.addNewCost(newCost)
     }
 }
 
@@ -43,29 +45,31 @@ extension RecentCostsViewModel {
 
 extension RecentCostsViewModel {
     
-    func fetch(complete: @escaping (_ success: Bool) -> Void) {
-        do {
-            let costModels = try costsProvider.getRecentCosts()
-            
+    func fetch(complete: @escaping () -> Void) {
+        
+        interactor.getCosts { (costs) in
             costVMs.removeAll()
-            for costModel in costModels {
-                let costvm = process(costModel: costModel)
+            
+            for cost in costs {
+                let costvm = processCostModelToViewModel(cost)
                 costVMs.append(costvm)
             }
             
-            complete(true)
-        } catch {
-            complete(false)
-            print(error)
+            complete()
         }
     }
     
-    private func process(costModel:BudgetItemMO) -> CostViewModel {
-        let costVM = CostViewModel(category: costModel.category!, amount: costModel.amount, date: costModel.date!, description: costModel.desc)
+    private func processCostModelToViewModel(_ costModel:BudgetItem) -> CostViewModel {
+        let costVM = CostViewModel(
+            category: costModel.category,
+            amount: costModel.amount,
+            date: costModel.date,
+            description: costModel.comment)
         
         return costVM
     }
 }
+
 
 
 struct CostViewModel {

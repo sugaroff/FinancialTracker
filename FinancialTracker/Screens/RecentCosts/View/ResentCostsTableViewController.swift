@@ -25,7 +25,7 @@ class ResentCostsTableViewController: UITableViewController {
     }
 
     func fetch() {
-        viewModel.fetch { [unowned self] (isSuccess) in
+        viewModel.fetch { [unowned self]
             self.tableView.reloadData()
         }
     }
